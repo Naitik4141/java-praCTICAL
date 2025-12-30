@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>User Management</h1>
+            <p>Manage your users efficiently and intuitively.</p>
+        </header>
+
+        <main>
+            <section class="card form-section">
+                <h2>Add New User</h2>
+                <form id="userForm">
+                    <input type="hidden" id="userId">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="e.g. johndoe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="e.g. john@example.com" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn" class="btn primary">
+                            <span class="icon">+</span> Add User
+                        </button>
+                        <button type="button" id="cancelBtn" class="btn secondary hidden">Cancel Edit</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="card list-section">
+                <div class="list-header">
+                    <h2>Current Users</h2>
+                    <span class="badge" id="userCount">0 Users</span>
+                </div>
+                <div class="table-container">
+                    <table id="userTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- User rows will be injected here -->
+                        </tbody>
+                    </table>
+                    <div id="emptyState" class="empty-state">
+                        <p>No users found. Start by adding one above.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast" class="toast hidden">Action Successful</div>
+    <script src="app.js"></script>
+</body>
+</html>
